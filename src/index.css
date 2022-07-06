@@ -1,13 +1,134 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin: 0;padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+ul{
+  list-style: none;
+}
+
+.main-navbar{
+  width: 100%;
+  height: 16rem;
+  display: grid;
+  grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
+  font-size: 2rem;
+  box-shadow:0 2px 14px -2px rgb(116 107 107);
+}
+
+.logo-class{
+  align-self: center;
+  grid-column: 2/3;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logo-style{
+  font-size: 3rem;
+}
+.menu-link{
+  align-self: center;
+}
+
+.menu-link ul{
+  display: grid;
+  grid-template-columns: 2rem 1fr 1fr 1fr 2rem;
+}
+
+.social-media ul{
+  display: grid;
+  grid-template-columns:2rem 1fr 1fr 1fr 2rem;
+}
+
+.menu-link ul li:first-child{
+  grid-column: 2/3;
+}
+
+.social-media ul li:first-child{
+  grid-column: 2/3;
+}
+.social-media{
+  align-self: center;
+}
+
+.ham-menu{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.mobile-menu{
+  width: 100%;
+  box-shadow:0 2px 14px -2px rgb(116 107 107);
+  display: flexbox;
+  z-index: 99;
+  grid-column: 1/6;
+  grid-row: 2/3;
+ 
+}
+.mobile-menu ul{ 
+  margin-left: 5rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.hidden{
+  display: none;
+}
+@media(min-width:1081px){
+  .mobile-menu{
+    display: none;
+  }
+}
+
+@media(max-width:1080px){
+  .menu-link{
+    display: none;
+  }
+  /* .social-media{
+    display: none;
+  } */
+  .main-navbar{
+    grid-template-columns: 5rem 1fr 2fr 1fr 5rem;
+  }
+  .ham-menu{
+    display: grid;
+  }
+  .social-media ul li:first-child{
+    grid-column: 3/4;
+  }
+  .write{
+    font-size: 5rem;
+  }
+}
+
+@media(max-width:870px){
+  .menu-link{
+    display: none;
+  }
+  .social-media{
+    display: none;
+  }
+  .main-navbar{
+    grid-template-columns:3rem 1fr 1fr;
+  }
+  .ham-menu{
+    display: grid;
+  }
+  .logo-class{
+    justify-content: center;
+  }
+  .write{
+    font-size: 1rem;
+  }
+}
+
+.write{
+  text-align: center;
+  height: 30vh;
+  font-size: 7rem;
+  font-weight: 400;
+  color: rgb(0, 255, 42);
+  margin-top: 10vh;
 }
